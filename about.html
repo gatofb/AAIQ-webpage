@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre la AAIQ - Asociación Argentina de Ingenieros Químicos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* Header */
+        .header {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* Navigation */
+        .nav {
+            background: #1a1a1a;
+            padding: 0;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-list li {
+            margin: 0;
+        }
+
+        .nav-list a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            transition: background-color 0.3s;
+        }
+
+        .nav-list a:hover, .nav-list a.active {
+            background-color: #333;
+        }
+
+        /* Hero Section with Animation */
+        .hero {
+            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 40%, #f39c12 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shine 3s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            color: white;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        .main {
+            padding: 4rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .section p, .section ul {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .section ul {
+            padding-left: 2rem;
+        }
+
+        .section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .team-member h4 {
+            color: #e74c3c;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .team-member .name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member .position {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Vision/Mission Section */
+        .vision-mission {
+            background: #1a1a1a;
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .vision-mission h2 {
+            color: white;
+        }
+
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .vm-card {
+            background: #2c2c2c;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .vm-card h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .vm-card p, .vm-card ul {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .vm-card ul {
+            padding-left: 1.5rem;
+        }
+
+        /* History Section */
+        .history {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+
+        .history-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .history img {
+            max-width: 300px;
+            margin: 2rem auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Related Institutions */
+        .institutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .institution-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .institution-card h4 {
+            color: #e74c3c;
+            margin-bottom: 0.5rem;
+        }
+
+        .institution-card a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .institution-card a:hover {
+            color: #e74c3c;
+        }
+
+        .institution-card p {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: #1a1a1a;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: bold;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #e74c3c;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #95a5a6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            .vision-mission-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://static.wixstatic.com/media/971f6b_efedefb421764156a9e7b8973c774abb~mv2.gif" alt="AAIQ Logo">
+                    <div class="logo-text">AAIQ</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="https://capogrowth.wixstudio.com/aaiq">Inicio</a></li>
+                <li><a href="#" class="active">Sobre la AAIQ</a></li>
+                <li><a href="https://capogrowth.wixstudio.com/aaiq/blog">Noticias y Eventos</a></li>
+                <li><a href="https://capogrowth.wixstudio.com/aaiq/asociarme">Asociarme</a></li>
+                <li><a href="https://capogrowth.wixstudio.com/aaiq/members-area">Área Miembros</a></li>
+                <li><a href="https://capogrowth.wixstudio.com/aaiq/contact">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Sobre la AAIQ</h1>
+            <p>La AAIQ es la entidad que representa a los ingenieros químicos de Argentina desde 1928. Promovemos el desarrollo profesional, la innovación y el vínculo entre industria, academia y sociedad.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Team Section -->
+            <section class="section">
+                <h2>Nuestro Equipo</h2>
+                <p style="text-align: center; margin-bottom: 2rem;">Con un equipo comprometido y multidisciplinario, trabajamos para fortalecer los lazos con la industria, las instituciones académicas y la comunidad profesional.</p>
+                
+                <h3 style="text-align: center; margin-bottom: 2rem;">Comisión Directiva Nacional - 2024 / 2025</h3>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <h4>Presidente</h4>
+                        <div class="name">Ing. & MBA Néstor Farías Bouvier</div>
+                        <div class="position">CEO - Sapin Business Consultants</div>
+                    </div>
+                    <div class="team-member">
+                        <h4>Vicepresidente</h4>
+                        <div class="name">Ing. Jorge de Zavaleta</div>
+                        <div class="position">Gerente Ejecutivo - Cámara de la Industria Química y Petroquímica</div>
+                    </div>
+                    <div class="team-member">
+                        <h4>Secretario</h4>
+                        <div class="name">Ing. Graciela González Rosas</div>
+                        <div class="position">Prof. Independiente</div>
+                    </div>
+                    <div class="team-member">
+                        <h4>Tesorero</h4>
+                        <div class="name">Ing. Jorge de Zavaleta</div>
+                        <div class="position">Gerente Ejecutivo - Cámara de la Industria Química y Petroquímica</div>
+                    </div>
+                    <div class="team-member">
+                        <h4>Director</h4>
+                        <div class="name">Ing. Antonio Boustani</div>
+                        <div class="position">Empresario Director - AIRSA</div>
+                    </div>
+                    <div class="team-member">
+                        <h4>Director</h4>
+                        <div class="name">Ing. José Arauz</div>
+                        <div class="position">Asesor de empresas</div>
+                    </div>
+                    <div class="team-member">
+                        <h4>Director</h4>
+                        <div class="name">Ing. & Dr. Ana Gabriela Enderle</div>
+                        <div class="position">Coordinadora de Procesos - APL</div>
+                    </div>
+                    <div class="team-member">
+                        <h4>Director</h4>
+                        <div class="name">Ing. Héctor Ostrovsky</div>
+                        <div class="position">Sr. Engineer Techint</div>
+                    </div>
+                    <div class="team-member">
+                        <h4>Director</h4>
+                        <div class="name">Ing. Christian Nemichenitzer</div>
+                        <div class="position">PROF IT CS ECON</div>
+                    </div>
+                    <div class="team-member">
+                        <h4>Director</h4>
+                        <div class="name">Ing. José María Fumagalli</div>
+                        <div class="position">Consultor FVS y Asociados - Industria Química</div>
+                    </div>
+                    <div class="team-member">
+                        <h4>Director</h4>
+                        <div class="name">Ing. Claudio Cabrera</div>
+                        <div class="position">Estudio de Ingeniería</div>
+                    </div>
+                    <div class="team-member">
+                        <h4>Director Suplente</h4>
+                        <div class="name">Ing. Lucas Bruera</div>
+                        <div class="position">Secretario de relaciones FIQ</div>
+                    </div>
+                    <div class="team-member">
+                        <h4>Rev Cuentas</h4>
+                        <div class="name">Ing. Luis Araoz</div>
+                        <div class="position">Asesor de empresas</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Vision/Mission Section -->
+        <section class="vision-mission">
+            <div class="container">
+                <div class="vision-mission-grid">
+                    <div class="vm-card">
+                        <h3>Nuestra Visión</h3>
+                        <p>Ser una institución sin fines de lucro que genera y provee valor para el crecimiento profesional y el desarrollo personal de los Ingenieros Químicos.</p>
+                        <p>Actuar como catalizador para el debate y la formulación de soluciones a las necesidades de la sociedad y el desarrollo sustentable de la República Argentina, incrementando así el prestigio de sus asociados y de la profesión de Ingeniero Químico, logrando así el reconocimiento social y de sus entidades congéneres del mundo.</p>
+                    </div>
+                    <div class="vm-card">
+                        <h3>Nuestra Misión</h3>
+                        <ul>
+                            <li>Promover la excelencia en la educación y en las prácticas de la Ingeniería Química.</li>
+                            <li>Cooperar con el desarrollo permanente de los Ingenieros Químicos a través de productos, servicios, relaciones y asesoramientos.</li>
+                            <li>Opinar sobre las políticas que afecten a la Ingeniería Química y/o al desarrollo de las industrias.</li>
+                            <li>Apoyar y fomentar el desarrollo sustentable en la República Argentina.</li>
+                            <li>Promover el mayor ingreso a las carreras de Ingeniería Química en Argentina.</li>
+                            <li>Impulsar de forma continua el desarrollo y el intercambio de los conocimientos relevantes.</li>
+                            <li>Elevar continuamente los estándares éticos y profesionales de la Ingeniería Química.</li>
+                            <li>Estimular la colaboración entre las industrias, las universidades, los gobiernos y las asociaciones profesionales.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section class="history">
+            <div class="container">
+                <div class="history-content">
+                    <h2>Un poco de Historia</h2>
+                    <p>La Asociación Argentina de Ingenieros Químicos (AAIQ) tuvo sus orígenes en la ciudad de Santa Fe el <strong>10 de diciembre de 1928</strong>, cuando los primeros egresados de la Facultad de Ingeniería Química de Santa Fe, que había sido fundada en 1919, decidieron formar un centro que agrupe a los Ingenieros Químicos.</p>
+                    
+                    <p>En esa primera comisión directiva fue elegido como presidente el Ing. G. Maidana, como secretario al Ing. M. Schivazappa y como vocales los Ing. J. Salgado, G. Berraz, R. Contini, A. Abbate y J. Cruellas.</p>
+                    
+                    <p>Los profesionales de la Ingeniería Química tuvieron desde entonces una activa participación en la naciente industria nacional, colaboraron en la tecnificación del agro y en la industrialización de sus productos.</p>
+                    
+                    <p>Posteriormente fue recién en 1942 cuando se aprobaron los estatutos que, con algunas modificaciones, permitieron que el <strong>14 de Julio de 1960</strong> con la firma del entonces Presidente Arturo Frondizi se le concediera la personería jurídica y se fije su sede legal en la Ciudad de Buenos Aires.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Related Institutions -->
+            <section class="section">
+                <h2>Instituciones Relacionadas</h2>
+                <div class="institutions-grid">
+                    <div class="institution-card">
+                        <h4>Confederación Interamericana de Ingenieros Químicos (CIIQ)</h4>
+                        <a href="https://www.ciiq.org/" target="_blank">www.ciiq.org</a>
+                        <p>Organización que agrupa a asociaciones y colegios de ingenieros químicos de las Américas, fortaleciendo la profesión a nivel continental.</p>
+                    </div>
+                    <div class="institution-card">
+                        <h4>World Chemical Engineering Council (WCEC)</h4>
+                        <a href="https://wcec-online.org/" target="_blank">wcec-online.org</a>
+                        <p>Organismo global que coordina los congresos mundiales de ingeniería química y facilita la colaboración internacional.</p>
+                    </div>
+                    <div class="institution-card">
+                        <h4>Consejo Profesional de Ingeniería Química (CPIQ)</h4>
+                        <a href="http://cpiq.org.ar/" target="_blank">cpiq.org.ar</a>
+                        <p>Organismo que regula y fiscaliza el ejercicio de la profesión de Ingeniero Químico en Argentina.</p>
+                    </div>
+                    <div class="institution-card">
+                        <h4>Instituto Petroquímico Argentino (IPA)</h4>
+                        <a href="https://www.ipa.org.ar/" target="_blank">www.ipa.org.ar</a>
+                        <p>Institución clave que promueve el desarrollo de la industria petroquímica, fomentando investigación y capacitación.</p>
+                    </div>
+                    <div class="institution-card">
+                        <h4>Asociación Latinoamericana de Petroquímica y Química (APLA)</h4>
+                        <a href="https://www.apla.lat/" target="_blank">www.apla.lat</a>
+                        <p>Principal organización que agrupa a empresas de la industria petroquímica y química en América Latina.</p>
+                    </div>
+                    <div class="institution-card">
+                        <h4>Cámara de la Industria Química y Petroquímica (CIQyP)</h4>
+                        <a href="https://www.ciqyp.org.ar/" target="_blank">www.ciqyp.org.ar</a>
+                        <p>Entidad que representa al sector productivo químico y petroquímico en Argentina.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <h2>Construyamos juntos el futuro de la ingeniería química.</h2>
+                <p>Podés sumarte como miembro, colaborar desde tu empresa o involucrarte activamente en la asociación.</p>
+                <a href="https://capogrowth.wixstudio.com/aaiq/contact" class="btn">Contactanos</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AAIQ</h3>
+                    <p>Asociación Argentina de Ingenieros Químicos</p>
+                </div>
+                <div class="footer-section">
+                    <h3>QUICK LINKS</h3>
+                    <p><a href="https://capogrowth.wixstudio.com/aaiq">Inicio</a></p>
+                    <p><a href="#" class="active">Sobre la AAIQ</a></p>
+                    <p><a href="https://capogrowth.wixstudio.com/aaiq/blog">Noticias y Eventos</a></p>
+                    <p><a href="https://capogrowth.wixstudio.com/aaiq/asociarme">Asociarme</a></p>
+                    <p><a href="https://capogrowth.wixstudio.com/aaiq/members-area">Área Miembros</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>CONTACT</h3>
+                    <p>Asociación Argentina de Ingenieros Químicos</p>
+                    <p>Maipú 726 1P of:4 (C1006ACJ), Ciudad de Buenos Aires, Argentina</p>
+                    <p>E-Mail: <a href="mailto:info@aaiq.org.ar">info@aaiq.org.ar</a></p>
+                    <p>LinkedIn: <a href="https://ar.linkedin.com/company/aaiq" target="_blank">https://ar.linkedin.com/company/aaiq</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 - Desarrollado por CapoGrowth 🚀</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

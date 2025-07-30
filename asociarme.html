@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AAIQ - Asociación Argentina de Ingenieros Químicos</title>
+    <title>Asociarme - Asociación Argentina de Ingenieros Químicos</title>
     <style>
         * {
             margin: 0;
@@ -83,7 +83,7 @@
             transition: background-color 0.3s;
         }
 
-        .nav-list a:hover {
+        .nav-list a:hover, .nav-list a.active {
             background-color: #333;
         }
 
@@ -93,7 +93,7 @@
             background-size: 200% 200%;
             animation: gradientShift 8s ease infinite;
             color: white;
-            padding: 4rem 0;
+            padding: 3rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -135,7 +135,7 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             font-weight: 300;
             color: white;
@@ -145,9 +145,8 @@
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 800px;
+            font-size: 1.1rem;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             color: #fff;
@@ -167,28 +166,6 @@
             }
         }
 
-        .btn {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s;
-            font-weight: bold;
-            position: relative;
-            z-index: 2;
-            border: 2px solid rgba(255,255,255,0.3);
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        .btn:hover {
-            background: rgba(255,255,255,0.3);
-            border-color: rgba(255,255,255,0.5);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        }
-
         /* Main Content */
         .main {
             padding: 4rem 0;
@@ -205,86 +182,123 @@
             color: #2c3e50;
         }
 
-        /* News Section */
-        .news-grid {
+        .section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .section p, .section ul {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .section ul {
+            padding-left: 2rem;
+        }
+
+        .section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Membership Types */
+        .membership-types {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
-        .news-card {
+        .membership-card {
             background: #f8f9fa;
             border-radius: 8px;
-            padding: 1.5rem;
+            padding: 2rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
+            text-align: center;
         }
 
-        .news-card:hover {
-            transform: translateY(-5px);
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .news-card h3 {
-            color: #2c3e50;
+        .membership-card h4 {
+            color: #e74c3c;
             margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
 
-        .news-card p {
+        .membership-card p {
             color: #666;
-            margin-bottom: 1rem;
+            font-size: 0.95rem;
         }
 
-        .news-meta {
-            font-size: 0.9rem;
-            color: #999;
-        }
-
-        /* Pillars Section */
-        .pillars {
+        /* Details Section */
+        .details {
             background: #1a1a1a;
             color: white;
             padding: 4rem 0;
         }
 
-        .pillars h2 {
+        .details h2 {
             color: white;
         }
 
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        .details-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
 
-        .pillar {
-            background: #2c2c2c;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        .pillar-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #e74c3c;
-            margin-bottom: 1rem;
-        }
-
-        .pillar h3 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .pillar p {
+        .details ul {
+            text-align: left;
+            max-width: 600px;
+            margin: 2rem auto;
             color: #ccc;
+        }
+
+        .details ul li {
+            margin-bottom: 1rem;
             line-height: 1.6;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn.secondary {
+            background: #2c3e50;
+        }
+
+        .btn.secondary:hover {
+            background: #34495e;
+            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.3);
         }
 
         /* CTA Section */
@@ -304,6 +318,25 @@
             font-size: 1.1rem;
             margin-bottom: 2rem;
             color: #ccc;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: bold;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-cta:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
         }
 
         /* Footer */
@@ -367,6 +400,11 @@
             .logo-text {
                 font-size: 1.2rem;
             }
+
+            .form-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -390,7 +428,7 @@
                 <li><a href="https://capogrowth.wixstudio.com/aaiq">Inicio</a></li>
                 <li><a href="http://www.aaiq.org.ar/about">Sobre la AAIQ</a></li>
                 <li><a href="https://capogrowth.wixstudio.com/aaiq/blog">Noticias y Eventos</a></li>
-                <li><a href="http://www.aaiq.org.ar/asociarme">Asociarme</a></li>
+                <li><a href="http://www.aaiq.org.ar/asociarme" class="active">Asociarme</a></li>
                 <li><a href="https://capogrowth.wixstudio.com/aaiq/members-area">Área Miembros</a></li>
                 <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSciRuYQYBcEbOeyOdN-iGlHYtqzP15H6aE8F3XQzpkg4F77_A/viewform?usp=dialog">Contacto</a></li>
             </ul>
@@ -400,80 +438,80 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1><b>ASOCIACIÓN ARGENTINA DE INGENIEROS QUÍMICOS</h1>
-            <p>La Asociación Argentina de Ingenieros Químicos (AAIQ) es una institución dedicada a generar valor para el crecimiento profesional y personal de los ingenieros químicos en Argentina. Actuamos como catalizador para el debate y la formulación de soluciones a las necesidades de la sociedad y el desarrollo sustentable del país, elevando el prestigio de nuestros asociados y de la profesión a nivel nacional e internacional.</p>
-            <a href="https://capogrowth.wixstudio.com/aaiq/asociarme" class="btn">Asociarme</a>
+            <h1>Asociarme</h1>
+            <p>Sumate a la comunidad de ingenieros químicos más importante de Argentina. Juntos construimos el futuro de la profesión.</p>
         </div>
     </section>
 
     <!-- Main Content -->
     <main class="main">
         <div class="container">
-            <!-- News Section -->
+            <!-- Membership Types Section -->
             <section class="section">
-                <h2>Noticias, Eventos y Novedades Relevantes</h2>
-                <div class="news-grid">
-                    <a href="https://capogrowth.wixstudio.com/aaiq/post/12th-world-congress-of-chemical-engineering-2025" class="news-card">
-                        <h3>12th World Congress of Chemical Engineering - 2025</h3>
-                        <p>Congreso mundial de ingeniería química que se realizará en 2025.</p>
-                        <div class="news-meta">May 1 • 1 min read</div>
-                    </a>
-                    <a href="https://capogrowth.wixstudio.com/aaiq/post/ciiq2025-xxxi-congreso-interamericano-de-ingeniería-química" class="news-card">
-                        <h3>CIIQ2025 - XXXI CONGRESO INTERAMERICANO DE INGENIERÍA QUÍMICA</h3>
-                        <p>El congreso interamericano más importante de ingeniería química.</p>
-                        <div class="news-meta">May 1 • 1 min read</div>
-                    </a>
-                    <a href="https://capogrowth.wixstudio.com/aaiq/post/cibiq-3er-congreso-iberoamericano-de-ingeniería-química-8-10-septiembre-2025-lisboa-portugal" class="news-card">
-                        <h3>CIBIQ - 3er Congreso Iberoamericano de Ingeniería Química</h3>
-                        <p>8-10 Septiembre, 2025, Lisboa, Portugal.</p>
-                        <div class="news-meta">May 1 • 1 min read</div>
-                    </a>
-                    <a href="https://capogrowth.wixstudio.com/aaiq/post/asumió-una-nueva-comisión-directiva-nacional-de-aaiq-30-10-2024" class="news-card">
-                        <h3>Asumió una nueva Comisión Directiva Nacional de AAIQ</h3>
-                        <p>Nueva comisión directiva asumió el 30/10/2024.</p>
-                        <div class="news-meta">May 1 • 3 min read</div>
-                    </a>
+                <h2>Modalidades</h2>
+                <div class="membership-types">
+                    <div class="membership-card">
+                        <h4>Socio Profesional Activo</h4>
+                        <p>Ser Ingeniero Químico con título reconocido por el Ministerio de Educación de la Nación Argentina.</p>
+                    </div>
+                    <div class="membership-card">
+                        <h4>Socio de Otra Profesión</h4>
+                        <p>Profesionales y técnicos de actividades afines y quienes deseen apoyar la acción de AAIQ.</p>
+                    </div>
+                    <div class="membership-card">
+                        <h4>Socio Emérito</h4>
+                        <p>Ser Ingeniero Químico jubilado con título reconocido por el Ministerio de Educación de la Nación Argentina.</p>
+                    </div>
+                    <div class="membership-card">
+                        <h4>Socio Estudiante</h4>
+                        <p>Estudiantes que hayan cursado el 80% de la carrera hasta segundo año de graduados.</p>
+                    </div>
                 </div>
             </section>
         </div>
 
-        <!-- Pillars Section -->
-        <section class="pillars">
+        <!-- Details Section -->
+        <section class="details">
             <div class="container">
-                <h2>PILARES DE TRABAJO</h2>
-                <p style="text-align: center; margin-bottom: 2rem;">Cuatro pilares de trabajo que nos definen.</p>
-                <div class="pillars-grid">
-                    <div class="pillar">
-                        <div class="pillar-number">01</div>
-                        <h3>Valorización Institucional y Presencia en la Discusión Nacional</h3>
-                        <p>Impulsamos la participación activa de la AAIQ en los debates técnicos y científicos de interés público, fortaleciendo la voz de la ingeniería química en temas estratégicos para el desarrollo del país.</p>
-                    </div>
-                    <div class="pillar">
-                        <div class="pillar-number">02</div>
-                        <h3>Interacción con la Industria</h3>
-                        <p>Fomentamos el vínculo entre la academia, los profesionales y las empresas del sector productivo. Generamos espacios de colaboración que impulsan la innovación y la sustentabilidad.</p>
-                    </div>
-                    <div class="pillar">
-                        <div class="pillar-number">03</div>
-                        <h3>Interacción con las Facultades de Ingeniería Química</h3>
-                        <p>Trabajamos en conjunto con universidades de todo el país para contribuir a la formación académica de futuros ingenieros químicos.</p>
-                    </div>
-                    <div class="pillar">
-                        <div class="pillar-number">04</div>
-                        <h3>Interacción con los Ingenieros Químicos</h3>
-                        <p>Nos enfocamos en construir comunidad. Acompañamos a los ingenieros químicos en todas las etapas de su carrera, ofreciendo capacitaciones y oportunidades.</p>
-                    </div>
+                <div class="details-content">
+                    <h2>Detalles sobre tu asociación</h2>
+                    <ul>
+                        <li>La Asociación Argentina de Ingenieros Químicos es una organización sin fines de lucro que funciona gracias al compromiso voluntario de sus miembros y el apoyo de personas y empresas que creen en el valor de la ingeniería química para el desarrollo del país.</li>
+                        <li>Podés colaborar con un aporte mensual desde $1.000 hasta $100.000, eligiendo libremente el monto que consideres. Cada contribución, por mínima que sea, ayuda a sostener nuestras actividades, capacitaciones, publicaciones y eventos.</li>
+                        <li>A partir de aportes mayores, las empresas pueden sumarse como patrocinadores institucionales, accediendo a beneficios especiales de visibilidad, vinculación con la comunidad profesional y participación activa en iniciativas estratégicas.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
+        <!-- Form Section -->
+        <section class="form-section">
+            <div class="container">
+                <h2>Formularios de Asociación</h2>
+                <p>Elegí la modalidad que mejor se adapte a tu perfil y completá el formulario correspondiente.</p>
+                <div class="form-buttons">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSciRuYQYBcEbOeyOdN-iGlHYtqzP15H6aE8F3XQzpkg4F77_A/viewform?usp=sharing&ouid=113512188639795705629" class="btn" target="_blank">Formulario de Asociación</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Company Section -->
+            <section class="section">
+                <h2>Asociarme como empresa o patrocinador</h2>
+                <p style="text-align: center; margin-bottom: 2rem;">Completa el siguiente formulario de contacto para poder conocer más sobre las opciones de patrocinio para empresas.</p>
+                <div style="text-align: center;">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSciRuYQYBcEbOeyOdN-iGlHYtqzP15H6aE8F3XQzpkg4F77_A/viewform?usp=sharing&ouid=113512188639795705629" class="btn secondary" target="_blank">Contacto Empresa</a>
+                </div>
+            </section>
+        </div>
+
         <!-- CTA Section -->
         <section class="cta">
             <div class="container">
-                <h2>Impulsamos la Ingeniería Química desde hace casi 100 años.</h2>
-                <h2>Construyamos juntos el futuro de la ingeniería química.</h2>
-                <p>Podés sumarte como miembro, colaborar desde tu empresa o involucrarte activamente en la asociación.</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSciRuYQYBcEbOeyOdN-iGlHYtqzP15H6aE8F3XQzpkg4F77_A/viewform?usp=dialog" class="btn">Contactanos</a>
+                <h2>¿Tenés dudas sobre la asociación?</h2>
+                <p>Contactanos y te ayudamos a encontrar la modalidad que mejor se adapte a tu perfil.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSciRuYQYBcEbOeyOdN-iGlHYtqzP15H6aE8F3XQzpkg4F77_A/viewform?usp=dialog" class="btn-cta" target="_blank">Contactanos</a>
             </div>
         </section>
     </main>
@@ -491,7 +529,7 @@
                     <p><a href="https://capogrowth.wixstudio.com/aaiq">Inicio</a></p>
                     <p><a href="http://www.aaiq.org.ar/about">Sobre la AAIQ</a></p>
                     <p><a href="https://capogrowth.wixstudio.com/aaiq/blog">Noticias y Eventos</a></p>
-                    <p><a href="http://www.aaiq.org.ar/asociarme">Asociarme</a></p>
+                    <p><a href="http://www.aaiq.org.ar/asociarme" class="active">Asociarme</a></p>
                     <p><a href="https://capogrowth.wixstudio.com/aaiq/members-area">Área Miembros</a></p>
                 </div>
                 <div class="footer-section">

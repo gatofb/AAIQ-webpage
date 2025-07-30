@@ -29,7 +29,7 @@ AAQI_webpage/
 ## 🔗 Enlaces
 
 - **Página Principal**: [https://storage.googleapis.com/aaiq/index.html](https://storage.googleapis.com/aaiq/index.html)
-- **Sitio Original**: [http://www.aaiq.org.ar](http://www.aaiq.org.ar)
+- **Sitio Original**: [https://www.aaiq.org.ar](https://www.aaiq.org.ar)
 
 ## 🎨 Diseño
 

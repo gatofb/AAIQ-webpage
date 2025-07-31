@@ -1,28 +1,36 @@
 # AAIQ - Asociación Argentina de Ingenieros Químicos
 
-Página web oficial de la Asociación Argentina de Ingenieros Químicos (AAIQ) alojada en Google Cloud Storage.
+Página web oficial de la Asociación Argentina de Ingenieros Químicos (AAIQ) alojada en Google Cloud Storage con múltiples páginas y funcionalidades avanzadas.
 
 ## 🌟 Características
 
 - **Diseño Moderno**: Hero section con gradiente animado en tonos rojos
 - **Responsive**: Adaptado para desktop y móviles
-- **Navegación Intuitiva**: Enlaces directos a las secciones del sitio principal
-- **Noticias Dinámicas**: Cards clickeables que redirigen a los posts del blog
+- **Navegación Intuitiva**: Enlaces directos a las secciones del sitio
+- **Noticias con Imágenes**: Cards visuales con imágenes reales de los eventos
 - **Logo Oficial**: Integración del logo animado de AAIQ
 - **Animaciones CSS**: Efectos de hover, gradientes animados y transiciones suaves
+- **SEO Optimizado**: Meta tags, Open Graph, JSON-LD y mejores prácticas
+- **Google Analytics**: Seguimiento completo con GA4 (G-1B9JZCS9RN)
+- **Event Tracking**: Seguimiento de clicks en botones de contacto
+- **Múltiples Páginas**: Home, About, Asociarme con navegación consistente
 
 ## 🚀 Tecnologías
 
-- HTML5
-- CSS3 (Flexbox, Grid, Animations)
+- HTML5 semántico
+- CSS3 (Flexbox, Grid, Animations, Responsive Design)
+- JavaScript (Google Analytics, Event Tracking)
 - Google Cloud Storage
 - Google Cloud DNS
+- Git & GitHub
 
 ## 📁 Estructura
 
 ```
 AAQI_webpage/
 ├── index.html          # Página principal
+├── about.html          # Página sobre AAIQ
+├── asociarme.html      # Página de membresía
 └── README.md          # Documentación del proyecto
 ```
 
@@ -46,12 +54,32 @@ AAQI_webpage/
 
 ## 📱 Secciones
 
+### Página Principal (index.html)
 1. **Header**: Logo oficial + navegación
 2. **Hero**: Título principal con descripción y CTA
-3. **Noticias**: Grid de noticias con enlaces al blog
+3. **Noticias**: Grid de noticias con imágenes reales de eventos
 4. **Pilares**: 4 pilares de trabajo de AAIQ
 5. **CTA**: Call-to-action institucional
 6. **Footer**: Información de contacto y enlaces rápidos
+
+### Página About (about.html)
+1. **Equipo Directivo**: Comisión directiva 2024-2025 (sin Fumagalli)
+2. **Visión y Misión**: Objetivos institucionales
+3. **Historia**: Fundación en 1928 con imagen histórica
+4. **Instituciones Relacionadas**: Enlaces a organizaciones afines
+
+### Página Asociarme (asociarme.html)
+1. **Modalidades de Membresía**: Diferentes tipos de asociación
+2. **Formularios**: Enlaces a Google Forms para inscripción
+3. **Beneficios**: Ventajas de ser miembro
+
+## 📊 Analytics y Tracking
+
+- **Google Analytics 4**: Código G-1B9JZCS9RN
+- **Event Tracking**: 
+  - `Contact_click` para botones de contacto
+  - Categoría: `engagement`
+  - Labels: `navbar_contact`, `cta_contact_button`
 
 ## 🔧 Despliegue
 
